@@ -52,11 +52,40 @@ Model Waveform
 <img width="706" height="167" alt="image" src="https://github.com/user-attachments/assets/bff0d8fd-d679-444e-af37-0b34585853c1" />
 
 Program
+```
+Am=0.42; 
+fm=14; 
+Ac=0.84; 
+fc=28; 
+fs=2400; 
+t=0:1/fs:2/fm; 
+Em=Am*sin(2*3.14*fm*t); 
+subplot(4,1,1); 
+plot(t,Em); 
+xgrid; 
+Ec=Ac*sin(2*3.14*fc*t); 
+subplot(4,1,2); 
+plot(t,Ec); 
+xgrid; 
+Edsbsc1=(Am/2.*cos(2*3.14*fc*t-2*3.14*fm*t))-(Am/2.*cos(2*3.14*fc*t+2*3.14*fm*t)); 
+Edsbsc2=(Am/2.*cos(2*3.14*fc*t-2*3.14*fm*t))+(Am/2.*cos(2*3.14*fc*t+2*3.14*fm*t)); 
+Elsb=Edsbsc1+Edsbsc2; 
+subplot(4,1,3); 
+plot(t,Elsb); 
+Eusb=Edsbsc1-Edsbsc2; 
+subplot(4,1,4); 
+plot(t,Eusb); 
+xgrid;
+
+```
 
 OUTPUT WAVEFORM
+<img width="1918" height="913" alt="image" src="https://github.com/user-attachments/assets/11c03784-d0cd-492a-b306-eccf2476c803" />
 
 TABULATION
 
+![WhatsApp Image 2025-10-13 at 21 39 15_e1423927](https://github.com/user-attachments/assets/b9d7cd1d-facb-444b-93ce-05dc5c947bcf)
+![WhatsApp Image 2025-10-13 at 21 39 15_fb3d2763](https://github.com/user-attachments/assets/e42b51bf-a620-4dce-a8e7-a617a4172819)
 
 
 
